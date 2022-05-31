@@ -49,9 +49,12 @@ services:
     command:
       - --uri=amqp://haproxy.local
       - --servers-startup-timeout=30
-      - --producers=1
-      - --consumers=1
-      - --rate=1
+      - --producers=10
+      - --consumers=10
+      - --queue-pattern=perf-test-%d
+      - --queue-pattern-from=1
+      - --queue-pattern-to=10
+      - --quorum-queue
     depends_on:
       - haproxy
     restart: on-failure
