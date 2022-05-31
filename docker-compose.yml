@@ -16,7 +16,7 @@ services:
     environment:
       - LOG=debug
     volumes:
-      - ./data/rmq0:/var/lib/rabbitmq
+      - ./data/rmq0:/var/lib/rabbitmq/mnesia
       - ./log/rmq0:/var/log/rabbitmq
   rmq1:
     image: vesc-1039:latest
@@ -28,7 +28,7 @@ services:
     environment:
       - LOG=debug
     volumes:
-      - ./data/rmq1:/var/lib/rabbitmq
+      - ./data/rmq1:/var/lib/rabbitmq/mnesia
       - ./log/rmq1:/var/log/rabbitmq
   rmq2:
     image: vesc-1039:latest
@@ -40,7 +40,7 @@ services:
     environment:
       - LOG=debug
     volumes:
-      - ./data/rmq2:/var/lib/rabbitmq
+      - ./data/rmq2:/var/lib/rabbitmq/mnesia
       - ./log/rmq2:/var/log/rabbitmq
   perf-test:
     image: pivotalrabbitmq/perf-test:latest
