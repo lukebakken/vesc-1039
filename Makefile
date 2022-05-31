@@ -1,12 +1,10 @@
-.PHONY: down fresh image up
+.PHONY: down image up
 
 down:
 	docker compose down
 
-fresh: down up import
-
 image:
-	docker build --tag vesc-1039:latest --file $(CURDIR)/Dockerfile
+	docker build --tag vesc-1039:latest .
 
 up:
 	docker compose up --detach
