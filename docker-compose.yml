@@ -48,9 +48,10 @@ services:
       - rabbitnet
     command:
       - --uri=amqp://haproxy.local
-      - --servers-startup-timeout=30
+      - --servers-startup-timeout=60
       - --producers=10
       - --consumers=10
+      - --rate=100
       - --queue-pattern=perf-test-%d
       - --queue-pattern-from=1
       - --queue-pattern-to=10
