@@ -1,4 +1,4 @@
-FROM rabbitmq:3-management
+FROM rabbitmq:3.9.13-management
 
 RUN apt-get clean && \
     apt-get update && \
